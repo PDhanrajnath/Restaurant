@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Zemoso Restaurant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>Zemoso Restaurant</h1>
+    </div>
+
+    <div class="row">
+      <div class="column side" id="tables">
+        <h2>Table</h2>
+        <input
+          class="searchTable"
+          type="text"
+          name="tablename"
+          id="searchTableInput"
+          placeholder="Search Table"
+          onkeyup="searchTable()"
+        />
+        <br /><br /><br />
+
+        <div
+          id="Table-1"
+          class="table one"
+          ondragover="addItemOnDrop(event)"
+          ondrop="onDropUpdateTableItems(event)"
+          onclick="generateBill1()"
+        >
+          <ul>
+            <li class="tablename" id="1">Table-1</li>
+            <li>Quantity:0</li>
+            <li>Price:0</li>
+          </ul>
+        </div>
+
+        <div id="Table-2" class="table two">
+          <ul>
+            <li class="tablename" id="2">Table-2</li>
+            <li>Quantity:0</li>
+            <li>Price:0</li>
+          </ul>
+        </div>
+
+        <div id="Table-3" class="table two">
+          <ul>
+            <li class="tablename" id="3">Table-3</li>
+            <li>Quantity:0</li>
+            <li>Price:0</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="column middle menu">
+        <h2>Menu</h2>
+        <input
+          class="searchMenu"
+          type="text"
+          name="itemname"
+          id="searchItemInput"
+          placeholder="Search menu.. by food"
+          onkeyup="debounce(searchItem(),3000)"
+        />
+        <br /><br /><br />
+        <div class="items" id="items">
+          <!--Items will be loaded dynamically-->
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
